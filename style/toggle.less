@@ -1,4 +1,7 @@
-span.x-tag-toggle{
+// x-tag: UI Toggle based on the iOS UI Switch visual styling
+// https://developer.apple.com/library/ios/documentation/userexperience/conceptual/UIKitUICatalog/UISwitch.html
+[x-tag=toggle] {
+    
     display:block;
     background:#ffffff;
     border:2px solid #CDC9C4;
@@ -9,30 +12,35 @@ span.x-tag-toggle{
     -moz-border-radius: 15px;
     border-radius: 15px;
     position:relative;
-}
-span.x-tag-toggle div{
-    background:#ffffff;
-    border:2px solid #CDC9C4;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
-    height:28px;
-    width:28px;
-    position:absolute;
-    left:-1px;
-    top:-1px;
-}
-span.x-tag-toggle[data-on=true]{
-    background:#00DC67;
-    border:2px solid #00DC67;
-}
-span.x-tag-toggle[data-on=true] div{
-    cursor: pointer;
-    right: -1px;
-    left: auto;
-    background:#fff;
-    border:2px solid #00DC67;
-}
-span.x-tag-toggle + input[is=ui-toggle]{
-    display:none;
+
+    div{
+        background:#ffffff;
+        border:2px solid #CDC9C4;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        border-radius: 15px;
+        height:28px;
+        width:28px;
+        position:absolute;
+        left:-1px;
+        top:-1px;
+    }
+    
+    &[data-on=true]{
+        background:#00DC67;
+        border:2px solid #00DC67;
+        
+        div{
+            cursor: pointer;
+            right: -1px;
+            left: auto;
+            background:#fff;
+            border:2px solid #00DC67;
+        }
+    }
+    
+    // hide the input checkbox associated to the toggle
+    + input[is=ui-toggle]{
+        display:none;
+    }
 }
