@@ -2,9 +2,9 @@ var uiToggleElement = Object.create(HTMLInputElement.prototype);
 uiToggleElement.attachedCallback  = function() {
     //window.addEventListener('mouseup', uiToggleElement.dragRelease, false);
     this.type = "checkbox";
-    var toggle = document.createElement('span');
+    var toggle = document.createElement('div');
     toggle.setAttribute("data-on", this.checked );
-    toggle.setAttribute("class", "uiToggleCheckbox");
+    toggle.setAttribute("x-tag", "toggle");
     toggle.addEventListener("click", this.onToggle, false);
     var indicator = document.createElement('div');
     indicator.addEventListener('mousedown', uiToggleElement.dragRequest, false);       
